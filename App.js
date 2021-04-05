@@ -7,7 +7,7 @@ export default function App() {
   const [outputText, setOutputText] = useState('React Native: Initial Project !')
 
   return (
-    <View style={{padding:50, flexDirection:'row'}}>
+    <View style={styles.screen}>
       <View
         style={{
           backgroundColor:'red',
@@ -51,5 +51,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  screen:{
+    padding:50,
+    flexDirection:'row'
   },
 });
