@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
 
-  const [outputText, setOutputText] = useState('React Native')
+  const [outputText, setOutputText] = useState('React Native: Initial Project !')
 
   return (
     <View style={styles.container}>
