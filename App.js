@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 export default function App() {
 
@@ -9,7 +9,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>{outputText}</Text>
-      <Button title="Submit" onPress={()=>setOutputText('Binary in my Blood !')} />
+      <TextInput placeholder="Course Goals..!" style={{borderBottomColor: '#1248', borderBottomWidth: 1, margin:20, width:'80%', textAlign:'center'}} />
+      <Button title="UPDATE" onPress={()=>setOutputText('Binary in my Blood !')}/>
       <StatusBar style="auto" />
     </View>
   );
