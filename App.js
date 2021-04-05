@@ -7,11 +7,40 @@ export default function App() {
   const [outputText, setOutputText] = useState('React Native: Initial Project !')
 
   return (
-    <View style={styles.container}>
-      <Text>{outputText}</Text>
-      <TextInput placeholder="Course Goals..!" style={{borderBottomColor: '#1248', borderBottomWidth: 1, margin:20, width:'80%', textAlign:'center'}} />
-      <Button title="UPDATE" onPress={()=>setOutputText('Binary in my Blood !')}/>
-      <StatusBar style="auto" />
+    <View style={{padding:50, flexDirection:'row'}}>
+      <View
+        style={{
+          backgroundColor:'red',
+          width: 100,
+          height:100,
+          justifyContent:'center',
+          alignItems:'center'
+        }}
+        >
+        <Text style={{color:'white'}}>1</Text>
+      </View>
+      <View
+        style={{
+          backgroundColor:'blue',
+          width: 100,
+          height:100,
+          justifyContent:'center',
+          alignItems:'center'
+        }}
+        >
+        <Text style={{color:'white'}}>2</Text>
+      </View>
+      <View
+        style={{
+          backgroundColor:'green',
+          width: 100,
+          height:100,
+          justifyContent:'center',
+          alignItems:'center'
+        }}
+        >
+        <Text style={{color:'white'}}>3</Text>
+      </View>
     </View>
   );
 }
