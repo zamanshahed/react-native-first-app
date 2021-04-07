@@ -4,42 +4,32 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 export default function App() {
 
-  const [outputText, setOutputText] = useState('React Native: Initial Project !')
+  // const [outputText, setOutputText] = useState('React Native: Initial Project !')
+  const [enterGoal, setEnterGoal] = useState('');
+  const [courseGoals, setCourseGoals] = useState([]);
+
+  const goalInputHandler = (enteredText)=>{
+    setEnterGoal(enteredText);
+  }
+
+  const addGoalHandler= () => {
+    setCourseGoals(currentGoals => [...courseGoals, enterGoal])
+  }
 
   return (
     <View style={styles.screen}>
-      <View
-        style={{
-          backgroundColor:'red',
-          width: 100,
-          height:100,
-          justifyContent:'center',
-          alignItems:'center'
-        }}
-        >
-        <Text style={{color:'white'}}>1</Text>
+      <View style={styles.container}>
+        <TextInput
+          placeholder="Course Goals..."
+          onChangeText={goalInputHandler}
+          value={enterGoal}
+          />
+        <Button title="UPDATE"  onPress={addGoalHandler}/>
       </View>
-      <View
-        style={{
-          backgroundColor:'blue',
-          width: 100,
-          height:100,
-          justifyContent:'center',
-          alignItems:'center'
-        }}
-        >
-        <Text style={{color:'white'}}>2</Text>
-      </View>
-      <View
-        style={{
-          backgroundColor:'green',
-          width: 100,
-          height:100,
-          justifyContent:'center',
-          alignItems:'center'
-        }}
-        >
-        <Text style={{color:'white'}}>3</Text>
+      <View>
+        {courseGoals.map((goal)=>
+          <Text key={goal}>{goal}</Text>
+        )}
       </View>
     </View>
   );
