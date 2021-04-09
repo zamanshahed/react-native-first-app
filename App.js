@@ -20,7 +20,7 @@ export default function App() {
     <View style={styles.screen}>
       <View style={styles.container}>
         <TextInput
-          placeholder="Course Goals..."
+          placeholder="Project Goals..."
           onChangeText={goalInputHandler}
           value={enterGoal}
           />
