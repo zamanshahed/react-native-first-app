@@ -23,11 +23,16 @@ export default function App() {
     });
   }
 
+  const cancelGoalInput = () => {
+    setAddVisibility(false);
+  };
+
+
   return (
     <View style={styles.screen}>
 
       <Button title="Add New Goal" onPress={()=>setAddVisibility(true)} />
-      <GoalInput visible={addVidibility} onAddGoal = {addGoalHandler} />
+      <GoalInput visible={addVidibility} onAddGoal = {addGoalHandler} onCancel={cancelGoalInput}/>
 
       <FlatList data={courseGoals} renderItem={itemData => <GoalItem id={itemData.item.key} onDelete={removeGoalHandler} title={itemData.item.value} />} />
 
