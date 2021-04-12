@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
@@ -10,7 +10,7 @@ export default function App() {
   // const [outputText, setOutputText] = useState('React Native: Initial Project !')
   // const [enterGoal, setEnterGoal] = useState('');
   const [courseGoals, setCourseGoals] = useState([]);
-
+  const [addVidibility, setAddVisibility] = useState(false);
 
   const addGoalHandler= goalTitle => {
     setCourseGoals(currentGoals => [...courseGoals, {key: Math.random().toString(), value: goalTitle}])
@@ -25,7 +25,8 @@ export default function App() {
   return (
     <View style={styles.screen}>
 
-      <GoalInput onAddGoal = {addGoalHandler} />
+      <Button title="Add New Goal" onPress={()=>setAddVisibility(true)} />
+      <GoalInput visible={addVidibility} onAddGoal = {addGoalHandler} />
 
       <FlatList data={courseGoals} renderItem={itemData => <GoalItem id={itemData.item.key} onDelete={removeGoalHandler} title={itemData.item.value} />} />
 
