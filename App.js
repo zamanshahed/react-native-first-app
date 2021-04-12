@@ -21,7 +21,7 @@ export default function App() {
 
       <GoalInput onAddGoal = {addGoalHandler} />
 
-      <FlatList data={courseGoals} renderItem={itemData => <GoalItem title={itemData.item.value} />} />
+      <FlatList data={courseGoals} renderItem={itemData => <GoalItem onDelete={()=> console.log('Tap recorded..!!')} title={itemData.item.value} />} />
 
     </View>
   );
