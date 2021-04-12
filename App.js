@@ -13,7 +13,8 @@ export default function App() {
   const [addVidibility, setAddVisibility] = useState(false);
 
   const addGoalHandler= goalTitle => {
-    setCourseGoals(currentGoals => [...courseGoals, {key: Math.random().toString(), value: goalTitle}])
+    setCourseGoals(currentGoals => [...courseGoals, {key: Math.random().toString(), value: goalTitle}]);
+    setAddVisibility(false);
   }
 
   const removeGoalHandler = goalId => {
